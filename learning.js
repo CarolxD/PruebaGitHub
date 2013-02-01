@@ -54,4 +54,147 @@ function datosPersona(nombre_persona, apellido_persona, edad_persona){
 }
 
 var datos_persona = datosPersona(nombre, apellido, edad);
+console.log(datos_persona);
+
+//CONDICIONALES Y COMPARACIONES
+var verdad = true;
+var mentira = false;
+
+console.log("5" == "6"); //igual ==
+console.log(3 != 3); // !=
+console.log(typeof(3) == "number");
+
+console.log(1 > 10); // mayor que
+console.log(3 < 3);  // menor que
+console.log(3 <= 3); // menor o igual que
+console.log(3 >= 1); // mayor o igual que
+
+//ESTRUCTURA DE CONTROL
+var numero = 5;
+
+if(3 < numero){
+	console.log(" 3 es menor que "+numero);
+} else{
+	console.log(" 3 es mayor que "+numero);
+}
+
+//var aficiones = ["patinaje", "natacion", "spinning"];
+for(var indice = 0; indice < 3; indice++){
+	console.log(aficiones[indice]);
+}
+
+var lista = ["leche", "huevos", "barrita cereales", "agua", "ternera"];
+
+var compra = "Tenemos que comprar: ";
+for(var indice = 0; indice < lista.length; indice++){
+	compra += lista[indice];
+
+	if(indice == lista.length-2){
+		compra += " y ";
+	} else{
+		if(indice == lista.length-1){
+			compra += ".";
+		} else{
+			compra += ", ";
+		}
+	}
+}
+console.log(compra);
+
+//TABLAS DE MULTIPLICAR
+var limite_tabla = 10;
+var numero_tablas = 9;
+
+for(var indice_tabla = 0; indice_tabla <= numero_tablas; indice_tabla++){
+	for(var multiplicador = 0; multiplicador <= limite_tabla; multiplicador++){
+		var resultado = multiplicador * indice_tabla;
+		console.log(indice_tabla + "x" + multiplicador + "= " + resultado);
+	}
+}
+
+//No tengo dinero para la compra
+//Solo 3 cosas
+for(var indice = 0; indice < lista.length; indice++){
+
+	console.log("Compro " + lista[indice]);
+	console.log("embolsado!");
+
+	if(indice == 2){
+		break;
+	}
+
+}
+
+// La tercera cosa no la embolso, PERO SIGO COMPRANDO
+for(var indice = 0; indice < lista.length; indice++){
+
+	console.log("Compro " + lista[indice]);
+
+	if(indice == 2){
+		continue;
+	}
+
+	console.log("embolsado!");
+}
+
+//for pijo
+for(var indice in lista){
+	console.log(lista[indice]);
+}
+
+var cartera = 36;
+
+function aleatorio(inferior, superior){
+	numPosibilidades = superior - inferior;
+	aleat = Math.random() * numPosibilidades;
+	aleat = Math.round(aleat);
+	return parseInt(inferior, 10) + aleat;
+}
+
+while(cartera > 0){
+	var robo = aleatorio(1 ,5);
+	console.log("Me intentan robar!! " + robo + " $");
+
+	if(robo <= cartera){
+		cartera -= robo;
+		console.log("Pero aun me quedan: " + cartera + "$");
+	}else{
+		console.log("AVARICIOSO!!");
+		break;
+	}
+}
+
+console.log("Estoy sin dinero :( ");
+
+//SWITCH CASE, haz algo en cada caso
+var opcion = parseInt(prompt("Elige una opcion:"), 10);
+
+switch(opcion){
+	case 0:
+		console.log("has elegido 0");
+		break;
+	case 1:
+		console.log("has elegido 1");
+		break;
+	default:
+		console.log("opcion desconocida");
+		break;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
